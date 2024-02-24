@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 
 interface IPagination {
@@ -19,12 +19,12 @@ const Pagination = ({ setOffset, offset, limit, isLoading }: IPagination) => {
         }
     };
     return (
-        <>
+        <Box display='flex' justifyContent='center'>
             <Button onClick={handlePrevPage} disabled={offset === 0 || isLoading}>
                 Previous Page
             </Button>
             <Button onClick={handleNextPage} disabled={isLoading}>Next Page</Button>
-        </>
+        </Box>
     );
 };
 

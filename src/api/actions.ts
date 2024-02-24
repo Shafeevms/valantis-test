@@ -1,4 +1,4 @@
-import { IGetIdsAction, IGetItemsAction } from './types.ts';
+import { IGetFilterAction, IGetFieldsAction, IGetIdsAction, IGetItemsAction } from './types.ts';
 
 
 export const getIdsAction = (offset: number, limit: number): IGetIdsAction => {
@@ -14,4 +14,19 @@ export const getIdsAction = (offset: number, limit: number): IGetIdsAction => {
 export const getProductsAction = (ids: string[]): IGetItemsAction => ({
     action: 'get_items',
     params: { ids },
+});
+
+
+export const getFieldsAction = (): IGetFieldsAction => ({
+    action: 'get_fields',
+});
+
+export const getFieldsActionWithParams = (positionName: string): IGetFieldsAction => ({
+    action: 'get_fields',
+    params: { field: positionName }
+});
+
+export const getFilteredIdsAction = (filterParams: { [key: string]: string | number }): IGetFilterAction => ({
+    action: 'filter',
+    params: { ...filterParams , limit: 50},
 });

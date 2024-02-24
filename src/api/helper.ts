@@ -12,8 +12,7 @@ export const setXAuthHash = () => {
     return CryptoJS.MD5(authString).toString();
 };
 
-// TODO эти функции ниже не относятся к api;
-
+// TODO эта функции ниже не относятся к api:
 export const removeDuplicatesById = (originalArray: IProductItem[]) => {
     const uniqueIds = new Set();
     return originalArray.filter(item => {
@@ -22,6 +21,4 @@ export const removeDuplicatesById = (originalArray: IProductItem[]) => {
         return isUnique;
     });
 };
-
-export const calculateOffset = (pageNumber: number, pageLimit: number) => (pageNumber - 1) * pageLimit;
 
