@@ -1,5 +1,6 @@
-import { Card, CardContent, Grid, Typography } from '@mui/material';
 import { IProductItem } from '../App.tsx';
+
+import { Card, CardContent, Grid, Typography } from '@mui/material';
 
 
 const ItemCard = ({ id, product, price, brand}: IProductItem) => {

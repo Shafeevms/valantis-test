@@ -1,5 +1,6 @@
-import { Button, InputLabel, MenuItem, Select, SelectChangeEvent, TextField, Toolbar, Typography } from '@mui/material';
 import { ChangeEvent, useState } from 'react';
+
+import { Button, InputLabel, MenuItem, Select, SelectChangeEvent, TextField, Toolbar, Typography } from '@mui/material';
 
 
 interface IHeaderComponent {
@@ -42,8 +43,8 @@ const Header = ({ options, onClick }: IHeaderComponent) => {
 
     return (
         <Toolbar>
-            <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-                Наше золотишко)
+            <Typography variant='h3' component='div' sx={{ flexGrow: 1 }}>
+                ВАЛАНТИС
             </Typography>
             <InputLabel id='select-label' sx={{ marginRight: '10px' }}>Поиск по:</InputLabel>
             <Select
@@ -53,7 +54,7 @@ const Header = ({ options, onClick }: IHeaderComponent) => {
                 id='select-label'
                 name='select'
             >
-                <MenuItem defaultValue='' disabled>Поиск по:</MenuItem>
+                <MenuItem value='default'>Всем</MenuItem>
                 {options && options.map((option, index) => (
                     <MenuItem key={index} value={option}>{getTranslate(option)}</MenuItem>
                 ))}

@@ -21,11 +21,6 @@ export const getFieldsAction = (): IGetFieldsAction => ({
     action: 'get_fields',
 });
 
-export const getFieldsActionWithParams = (positionName: string): IGetFieldsAction => ({
-    action: 'get_fields',
-    params: { field: positionName }
-});
-
 export const getFilteredIdsAction = (filterParams: { [key: string]: string | number }): IGetFilterAction => ({
     action: 'filter',
     params: { ...filterParams , limit: 50},

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { fetchData } from './api';
-import { Container } from '@mui/material';
 import { getFieldsAction } from './api/actions.ts';
+
+import { Container } from '@mui/material';
 import CardList from './components/CardList.tsx';
 import Header from './components/Header.tsx';
 
@@ -18,6 +19,10 @@ const App = () => {
     const [filterParams, setFilterParams] = useState<{ [key: string]: string | number } | null>(null);
 
     const handleFilterParams = (field: string, text: string) => {
+        if (field === 'default') {
+            setFilterParams(null);
+            return;
+        }
         setFilterParams({ [field]: field === 'price' ? +text : text });
     };
 
@@ -38,8 +43,3 @@ const App = () => {
 };
 
 export default App;
-
-// TODO README.MD
-// TODO рефакт, порядок
-// TODO .env??
-// TODO тесты?
